@@ -100,12 +100,12 @@ section { overflow: hidden; }
 }
 
 .logo img{
-    height:70px;
+    height:40px;
     transition:.3s;
 }
 
 .header.scrolled .logo img{
-    height:60px;
+    height:40px;
 }
 
 
@@ -120,7 +120,15 @@ section { overflow: hidden; }
 }
 
 .logo img{
-    height: 65px;
+    height: 50px;
+}
+
+@media (max-width:768px){
+
+    .logo img{
+        height:40px;
+    }
+
 }
 .menu-btn{
     display:block;
