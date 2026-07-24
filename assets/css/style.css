@@ -996,6 +996,276 @@ section { overflow: hidden; }
     background: #2563eb;
 }
 
+/* ===================================
+   PRODUCTOS MÁS VENDIDOS
+=================================== */
+
+.productos-vendidos{
+    width:100%;
+    padding:90px 20px;
+    background:#f5f7fb;
+    overflow:hidden;
+}
+
+.productos-vendidos-contenedor{
+    width:100%;
+    max-width:1300px;
+    margin:0 auto;
+}
+
+.productos-vendidos-encabezado{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.productos-vendidos-encabezado span{
+    display:block;
+    margin-bottom:8px;
+
+    color:#f4bd00;
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.productos-vendidos-encabezado h2{
+    margin:0;
+
+    color:#06265f;
+    font-size:clamp(34px, 5vw, 58px);
+    font-weight:900;
+    line-height:1;
+    text-transform:uppercase;
+}
+
+/* Estructura del carrusel */
+
+.productos-carrusel{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.productos-ventana{
+    width:100%;
+    overflow:hidden;
+    padding:10px 5px 25px;
+}
+
+.productos-track{
+    display:flex;
+    transition:transform 0.6s ease;
+    will-change:transform;
+}
+
+/* Tres productos en computadora */
+
+.producto-card{
+    flex:0 0 33.333333%;
+    padding:0 12px;
+    box-sizing:border-box;
+}
+
+.producto-card > img{
+    display:block;
+    width:100%;
+    aspect-ratio:2 / 3;
+    object-fit:cover;
+
+    border-radius:20px 20px 0 0;
+}
+
+/* Información inferior */
+
+.producto-card-info{
+    padding:22px;
+
+    background:#ffffff;
+    border-radius:0 0 20px 20px;
+    box-shadow:0 12px 30px rgba(0,24,70,.12);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+
+.producto-boton{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    min-height:46px;
+    padding:10px 24px;
+
+    background:#f4bd00;
+    color:#06265f;
+
+    border-radius:8px;
+
+    font-size:14px;
+    font-weight:900;
+    text-decoration:none;
+    text-transform:uppercase;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.producto-boton:hover{
+    background:#06265f;
+    color:#ffffff;
+    transform:translateY(-3px);
+}
+
+/* Flechas */
+
+.productos-flecha{
+    position:relative;
+    z-index:5;
+
+    flex:0 0 48px;
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border:none;
+    border-radius:50%;
+
+    background:#06265f;
+    color:#ffffff;
+
+    font-size:24px;
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0, 24, 70, 0.22);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.productos-flecha:hover{
+    background:#f4bd00;
+    color:#06265f;
+    transform:scale(1.08);
+}
+
+.productos-flecha:disabled{
+    opacity:0.4;
+    cursor:not-allowed;
+    transform:none;
+}
+
+/* Indicadores */
+
+.productos-indicadores{
+    display:flex;
+    justify-content:center;
+    gap:9px;
+    margin-top:15px;
+}
+
+.productos-punto{
+    width:10px;
+    height:10px;
+
+    padding:0;
+    border:none;
+    border-radius:50%;
+
+    background:#b8c0cc;
+    cursor:pointer;
+
+    transition:all 0.3s ease;
+}
+
+.productos-punto.activo{
+    width:28px;
+    border-radius:10px;
+    background:#f4bd00;
+}
+
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width:1000px){
+
+    /* Dos productos en tablet */
+    .producto-card{
+        flex-basis:50%;
+    }
+
+}
+
+
+/* ===================================
+   CELULAR
+=================================== */
+
+@media (max-width:768px){
+
+    .productos-vendidos{
+        padding:65px 10px;
+    }
+
+    .productos-vendidos-encabezado{
+        margin-bottom:30px;
+    }
+
+    .productos-vendidos-encabezado h2{
+        font-size:36px;
+    }
+
+    .productos-carrusel{
+        gap:0;
+    }
+
+    /* Un producto en teléfono */
+    .producto-card{
+        flex-basis:100%;
+        padding:0 8px;
+    }
+
+    .producto-card-info{
+        min-height:auto;
+    }
+
+    .productos-flecha{
+        position:absolute;
+        top:42%;
+
+        width:42px;
+        height:42px;
+        flex-basis:42px;
+
+        font-size:20px;
+
+        transform:translateY(-50%);
+    }
+
+    .productos-flecha:hover{
+        transform:translateY(-50%);
+    }
+
+    .productos-anterior{
+        left:14px;
+    }
+
+    .productos-siguiente{
+        right:14px;
+    }
+
+}
+
 
 .widget_ab_item_text a{
     color: white;
