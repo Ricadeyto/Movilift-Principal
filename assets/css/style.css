@@ -319,6 +319,30 @@ section { overflow: hidden; }
 
 }
 
+
+html{
+    scrollbar-width:thin;
+    scrollbar-color:#f4bd00 #061f55;
+}
+
+::-webkit-scrollbar{
+    width:9px;
+}
+
+::-webkit-scrollbar-track{
+    background:#061f55;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#f4bd00;
+    border-radius:10px;
+    border:2px solid #061f55;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#ffffff;
+}
+
 /*=============================
         HEADER
 =============================*/
