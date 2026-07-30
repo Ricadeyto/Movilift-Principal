@@ -96,18 +96,18 @@
 
     <ul>
 
+        
         <li><a href="index.html">Inicio</a></li>
 
         <li><a href="Patines.html">Patines</a></li>
 
-        <li><a href="#business">Apiladores</a></li>
+        <li><a href="Apiladores.html">Apiladores</a></li>
 
-        <li><a href="#business">Montacargas</a></li>
+        <li><a href="Montacargas.html">Montacargas</a></li>
 
-        <li><a href="#business">Mesas de Elevación</a></li>
+        <li><a href="Mesas.html">Mesas de Elevación</a></li>
 
-        <li><a href="#contacto">Contáctanos</a></li>
-
+        <li><a href="Contacto.html">Contáctanos</a></li>
     </ul>
 
     <div class="menu-contacto">
@@ -818,74 +818,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
           
-
-<!-- FORMULARIO DE CONTACTO -->
-<section id="contacto" class="contacto-section">
-
-    <div class="container">
-
-        <div class="contacto-box">
-
-            <h2 class="contacto-titulo">
-                Solicita tu cotización
-            </h2>
-<div id="formMensaje"></div>
-
-<form id="contactForm" action="mail/enviar.php" method="POST">
-
-    <div class="form-group">
-        <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
-    </div>
-
-    <div class="form-group">
-        <input type="email" id="email" name="email" placeholder="Correo" required>
-    </div>
-
-    <div class="form-group">
-        <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
-    </div>
-
-    <div class="form-group">
-        <textarea id="mensaje" name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
-    </div>
-
-    <button type="submit" id="sendMessageButton" class="btn-contacto">
-        Solicitar Cotización
-    </button>
-
-</form>
-
-        </div>
-
-    </div>
-
-</section>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    const form = e.target;
-    const formData = new FormData(form);
-    const mensajeContenedor = document.getElementById("formMensaje");
-
-    fetch(form.action, {
-        method: "POST",
-        body: formData
-    })
-    .then(response => {
-        if (!response.ok) throw new Error("Error al enviar.");
-        return response.text();
-    })
-    .then(data => {
-        mensajeContenedor.innerHTML = `<div class="alert alert-success">${data}</div>`;
-        form.reset();
-    })
-    .catch(error => {
-        mensajeContenedor.innerHTML = `<div class="alert alert-danger">❌ No se pudo enviar el mensaje. Inténtalo nuevamente.</div>`;
-    });
-});
-</script>
 
 
           
