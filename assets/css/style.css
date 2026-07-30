@@ -3866,3 +3866,516 @@ work Section style
     }
 
 }
+
+
+/* ==========================================
+   CATÁLOGO DE PATINES HIDRÁULICOS
+========================================== */
+
+.catalogo-patines{
+    width:100%;
+    background:#f5f7fb;
+    color:#10213d;
+}
+
+.catalogo-contenedor{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding-left:24px;
+    padding-right:24px;
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+.catalogo-encabezado{
+    position:relative;
+    overflow:hidden;
+
+    padding:90px 0 85px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(25,82,170,.45),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #031d4b 0%,
+            #073478 100%
+        );
+
+    color:#ffffff;
+}
+
+.catalogo-encabezado::before{
+    content:"";
+
+    position:absolute;
+    top:-130px;
+    right:-130px;
+
+    width:380px;
+    height:380px;
+
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:50%;
+}
+
+.catalogo-encabezado::after{
+    content:"";
+
+    position:absolute;
+    right:70px;
+    bottom:-180px;
+
+    width:420px;
+    height:420px;
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:50%;
+}
+
+.catalogo-encabezado .catalogo-contenedor{
+    position:relative;
+    z-index:2;
+}
+
+.catalogo-etiqueta{
+    display:inline-block;
+
+    margin-bottom:15px;
+    padding:8px 16px;
+
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#f4bd00;
+
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+}
+
+.catalogo-encabezado h1{
+    margin:0 0 18px;
+
+    color:#ffffff;
+
+    font-size:clamp(42px, 6vw, 76px);
+    font-weight:900;
+    line-height:1;
+    letter-spacing:-2px;
+    text-transform:uppercase;
+}
+
+.catalogo-encabezado p{
+    max-width:670px;
+    margin:0;
+
+    color:rgba(255,255,255,.82);
+
+    font-size:18px;
+    line-height:1.7;
+}
+
+
+/* ==========================================
+   ZONA DE PRODUCTOS
+========================================== */
+
+.catalogo-productos{
+    padding:75px 0 95px;
+}
+
+.catalogo-superior{
+    margin-bottom:36px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.catalogo-contador{
+    display:block;
+    margin-bottom:7px;
+
+    color:#65728a;
+
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+.catalogo-superior h2{
+    margin:0;
+
+    color:#08285e;
+
+    font-size:34px;
+    font-weight:900;
+    line-height:1.2;
+}
+
+
+/* Buscador */
+
+.catalogo-buscador{
+    width:100%;
+    max-width:340px;
+}
+
+.catalogo-buscador input{
+    width:100%;
+    min-height:52px;
+
+    padding:13px 20px;
+
+    border:1px solid #d8dfeb;
+    border-radius:28px;
+
+    background:#ffffff;
+    color:#14213b;
+
+    font-family:inherit;
+    font-size:15px;
+
+    outline:none;
+
+    box-shadow:0 7px 22px rgba(11,39,86,.06);
+
+    transition:
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.catalogo-buscador input:focus{
+    border-color:#0b397f;
+
+    box-shadow:
+        0 0 0 4px rgba(11,57,127,.10),
+        0 8px 24px rgba(11,39,86,.10);
+}
+
+
+/* ==========================================
+   CUADRÍCULA
+========================================== */
+
+.catalogo-grid{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:34px;
+}
+
+
+/* ==========================================
+   TARJETA DEL PRODUCTO
+========================================== */
+
+.tarjeta-patin{
+    position:relative;
+
+    min-width:0;
+    overflow:hidden;
+
+    background:#ffffff;
+
+    border:1px solid rgba(10,45,100,.09);
+    border-radius:22px;
+
+    box-shadow:
+        0 13px 36px rgba(6,35,85,.09);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+.tarjeta-patin:hover{
+    transform:translateY(-10px);
+
+    border-color:rgba(15,64,140,.18);
+
+    box-shadow:
+        0 24px 48px rgba(6,35,85,.16);
+}
+
+
+/* Imagen */
+
+.tarjeta-patin__imagen{
+    position:relative;
+
+    width:100%;
+    aspect-ratio:1 / 1;
+
+    overflow:hidden;
+
+    background:#061f55;
+}
+
+.tarjeta-patin__imagen::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(3,23,57,.18),
+            transparent 40%
+        );
+
+    pointer-events:none;
+}
+
+.tarjeta-patin__imagen img{
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:
+        transform .6s cubic-bezier(.2,.7,.2,1);
+}
+
+.tarjeta-patin:hover .tarjeta-patin__imagen img{
+    transform:scale(1.045);
+}
+
+
+/* Información */
+
+.tarjeta-patin__contenido{
+    padding:25px;
+}
+
+.tarjeta-patin__datos{
+    margin-bottom:24px;
+
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0,1fr));
+    gap:8px;
+}
+
+.dato-equipo{
+    min-width:0;
+
+    padding:12px 8px;
+
+    text-align:center;
+
+    background:#f3f6fb;
+    border-radius:12px;
+}
+
+.dato-equipo span{
+    display:block;
+
+    margin-bottom:5px;
+
+    color:#7b8799;
+
+    font-size:11px;
+    font-weight:700;
+    line-height:1.2;
+    text-transform:uppercase;
+}
+
+.dato-equipo strong{
+    display:block;
+
+    color:#08285e;
+
+    font-size:13px;
+    font-weight:800;
+    line-height:1.3;
+}
+
+
+/* Botón */
+
+.boton-ver-equipo{
+    width:100%;
+    min-height:50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    padding:12px 20px;
+
+    background:#082d68;
+    color:#ffffff;
+
+    border:2px solid #082d68;
+    border-radius:28px;
+
+    font-size:15px;
+    font-weight:800;
+    text-decoration:none;
+
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
+
+.boton-ver-equipo span{
+    font-size:20px;
+
+    transition:transform .3s ease;
+}
+
+.boton-ver-equipo:hover{
+    background:#f4bd00;
+    border-color:#f4bd00;
+    color:#08285e;
+
+    transform:translateY(-2px);
+}
+
+.boton-ver-equipo:hover span{
+    transform:translateX(5px);
+}
+
+
+/* Sin resultados */
+
+.catalogo-sin-resultados{
+    display:none;
+
+    margin-top:35px;
+    padding:35px;
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    color:#647087;
+
+    font-size:17px;
+    text-align:center;
+
+    box-shadow:
+        0 12px 30px rgba(6,35,85,.08);
+}
+
+.catalogo-sin-resultados.visible{
+    display:block;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:991px){
+
+    .catalogo-grid{
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:28px;
+    }
+
+    .catalogo-encabezado{
+        padding:75px 0;
+    }
+
+}
+
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width:650px){
+
+    .catalogo-contenedor{
+        padding-left:16px;
+        padding-right:16px;
+    }
+
+    .catalogo-encabezado{
+        padding:65px 0;
+    }
+
+    .catalogo-encabezado h1{
+        font-size:42px;
+        letter-spacing:-1px;
+    }
+
+    .catalogo-encabezado p{
+        font-size:16px;
+    }
+
+    .catalogo-productos{
+        padding:55px 0 75px;
+    }
+
+    .catalogo-superior{
+        align-items:stretch;
+        flex-direction:column;
+        gap:22px;
+    }
+
+    .catalogo-superior h2{
+        font-size:29px;
+    }
+
+    .catalogo-buscador{
+        max-width:none;
+    }
+
+    .catalogo-grid{
+        grid-template-columns:1fr;
+        gap:26px;
+    }
+
+    .tarjeta-patin__contenido{
+        padding:20px;
+    }
+
+}
+
+
+/* ==========================================
+   CELULARES PEQUEÑOS
+========================================== */
+
+@media (max-width:390px){
+
+    .tarjeta-patin__datos{
+        grid-template-columns:1fr;
+    }
+
+    .dato-equipo{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+
+        padding:12px 15px;
+
+        text-align:left;
+    }
+
+    .dato-equipo span{
+        margin:0;
+    }
+
+}
