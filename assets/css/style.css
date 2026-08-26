@@ -709,7 +709,7 @@ html{
     margin-bottom: 25px;
 
     color: white;
-    font-size: clamp(56px, 6vw, 85px);
+    font-size: 60px;
     font-weight: 200;
     line-height: 1;
     letter-spacing: -4px;
